@@ -34,7 +34,7 @@ class Entry_Sil:
                 "sifre":sifre}
 
         r = rq.post(url,headers=headers,data=data)
-        user_data = json.loads(r.text)
+        user_data = r.json()
 
         return user_data
 
@@ -77,4 +77,10 @@ class Entry_Sil:
     def sil(self,eid):
         sil_url = f"{inci}entry_sil&entry_id="
         sil_url_tam = f"{sil_url}{eid}&token={self.token}"
-        rq.get(sil_url_tam,headers=headers)
+        r = rq.get(sil_url_tam,headers=headers)
+        deneme = 0
+        while deneme < 4:
+            r = rq.get(sil_url_tam,headers=headers)
+            deneme += 1
+            if r.json()["error"] == False:
+                break

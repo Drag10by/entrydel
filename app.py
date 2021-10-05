@@ -70,7 +70,7 @@ def Contact():
 	username,login_auth = get_current_username()
 	return render_template("contact.html",username=username,login_auth=login_auth)
 
-eids = []
+
 @app.route("/incidel",methods=["GET","POST"])
 def InciDel():
 	data = request.form.get("x","")
@@ -80,9 +80,6 @@ def InciDel():
 	except Exception as e:
 		pass
 	return data
-
-
-
 
 
 @app.route("/botactivited")
