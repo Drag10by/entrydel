@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% block body_content %}
+
+
+<section id="one" class="wrapper">
+	<div class="inner">
+		<!-- Form -->
+		<h3>Seçiminizi Yapınız</h3>
+
+		<form method="post" action="{{ url_for('Contact') }}">
+			<div class="row uniform">
+				<!-- Break -->
+				<div class="4u 12u$(small)">
+					<input type="radio" id="10" name="priority" value=10 checked>
+					<label for="10">10</label>
+				</div>
+				<div class="4u 12u$(small)">
+					<input type="radio" id="25" name="priority" value=25>
+					<label for="25">25</label>
+				</div>
+				<div class="4u 12u$(small)">
+					<input type="radio" id="50" name="priority" value=50>
+					<label for="50">2x5x10/2</label>
+				</div>
+				<div class="4u 12u$(small)">
+					<input type="radio" id="100" name="priority" value=100>
+					<label for="100">log(1000)</label>
+				</div>
+				<div class="4u 12u$(small)">
+					<input type="radio" id="hepsi" name="priority" value=0>
+					<label for="hepsi">All in</label>
+				</div>
+				<!-- Break -->
+				<div class="6u 12u$(small)">
+					<input type="checkbox" id="human" name="human" >
+					<label for="human">Ben insan değil miyim?</label>
+				</div>
+				<div class="6u 12u$(small)">
+					<input type="checkbox" id="robot" name="human" >
+					<label for="robot">Ben robot muyum?</label>
+				</div>
+				<!-- Break -->
+				<div class="12u$">
+					<textarea name="message" id="message" placeholder="Silinmesini istemediğiniz entrylerin numaralarını boşluk bırakarak buraya girin... Örn : (1234567 7654321 2931409)" rows="6"></textarea>
+				</div>
+				<!-- Break -->
+				<div class="12u$">
+					<ul class="actions">
+						<li><input type="submit" value="Sil Sil" /></li>
+						<li><input type="reset" value="Temizle" class="alt" /></li>
+					</ul>
+				</div>
+			</div>
+		</form>
+	</div></section>
+
+{% endblock %}
