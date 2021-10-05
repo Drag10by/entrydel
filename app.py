@@ -23,7 +23,7 @@ def get_current_username():
 	return username,login_auth
 
 
-@app.route("/")
+@app.route("/giris")
 def Index():
 	username,login_auth = get_current_username()
 	return render_template("index.html",username=username,login_auth=login_auth)
