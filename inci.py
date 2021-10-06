@@ -8,10 +8,8 @@ inci = "http://incisozluk.com.tr/api/?key=android&v=beta&ne="
 headers = {"Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
             "Accept-Encoding": "gzip, deflate",
             "Accept-Language": "tr-TR,tr;q=0.9,en-US;q=0.8,en;q=0.7",
-            "Connection": "keep-alive",
             "Host": "www.incisozluk.com.tr",
             "Referer": "http://www.incisozluk.com.tr/",
-            "Upgrade-Insecure-Requests": "1",
             "User-Agent": "Mozilla/5.0 (Windows NT 6.2; ) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.113 Safari/537.36"}
 
 
@@ -81,6 +79,5 @@ class Entry_Sil:
         while deneme < 4:
             r = rq.get(sil_url_tam,headers=headers)
             deneme += 1
-            sleep(1)
             if r.json()["error"] == False:
                 break
