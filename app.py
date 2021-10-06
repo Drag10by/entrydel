@@ -12,7 +12,6 @@ app.session_interface = MySessionInterface()
 ES = None
 hata = False
 silme = []
-eids = []
 adet = 10
 
 def get_current_username():
@@ -85,7 +84,6 @@ def InciDel():
 
 @app.route("/botactivited")
 def BotActivited():
-	global eids
 	eids = ES.link_al(adet)
 	username,login_auth = get_current_username()
 	return render_template("botactivited.html",eids=eids,username=username,login_auth=login_auth)
