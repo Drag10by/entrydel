@@ -74,15 +74,12 @@ def Contact():
 
 @app.route("/incidel",methods=["GET","POST"])
 def InciDel():
-	data = ""
-	if request.method == "POST":
-		if request.form:
-			data = request.form.get("x","")
-			try:
-				if data not in silme:
-					ES.sil(data)
-			except Exception as e:
-				pass
+	data = request.form.get("x","")
+	try:
+		if data not in silme:
+			ES.sil(data)
+		except Exception as e:
+			pass
 	return data
 
 
