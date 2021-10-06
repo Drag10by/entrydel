@@ -20,7 +20,7 @@
 		</tbody>
 	</table>
 	
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	
 	<script type=text/javascript>
 		var count = 0;
@@ -39,6 +39,10 @@
 							$("tbody").empty();
 						}
 						count++;
+					},
+					error: function (data){
+						a = "<tr id='"+data+"'><td>"+data+"</td></tr>"
+						$('tbody').prepend(a);
 					}
 				});
 		{%endfor%}
