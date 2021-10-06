@@ -73,13 +73,17 @@ def Contact():
 
 @app.route("/incidel",methods=["GET","POST"])
 def InciDel():
-	data = request.form.get("x","")
-	try:
-		if data not in silme:
-			ES.sil(data)
-	except Exception as e:
-		print(e)
-	username,login_auth = get_current_username()
+	global ES
+	data = ""
+	if request.method == "POST":
+		if request.form:
+			data = request.form.get("x","")
+			try:
+				if data not in silme:
+					ES.sil(data)
+			except Exception as e:
+				print(e)
+			username,login_auth = get_current_username()
 	return data
 
 
