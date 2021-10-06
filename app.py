@@ -78,8 +78,8 @@ def InciDel():
 	try:
 		if data not in silme:
 			ES.sil(data)
-		except Exception as e:
-			pass
+	except Exception as e:
+		pass
 	return data
 
 
