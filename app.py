@@ -13,6 +13,7 @@ ES = None
 hata = False
 silme = []
 eids = []
+adet = 10
 
 def get_current_username():
 	username = ""
