@@ -77,10 +77,10 @@ class Entry_Sil:
     def sil(self,eid):
         sil_url = f"{inci}entry_sil&entry_id="
         sil_url_tam = f"{sil_url}{eid}&token={self.token}"
-        r = rq.get(sil_url_tam,headers=headers)
         deneme = 0
         while deneme < 4:
             r = rq.get(sil_url_tam,headers=headers)
             deneme += 1
+            sleep(1)
             if r.json()["error"] == False:
                 break
