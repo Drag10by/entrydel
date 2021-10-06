@@ -78,7 +78,8 @@ def InciDel():
 		if data not in silme:
 			ES.sil(data)
 	except Exception as e:
-		pass
+		print(e)
+	username,login_auth = get_current_username()
 	return data
 
 
