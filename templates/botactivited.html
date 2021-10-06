@@ -25,7 +25,6 @@
 	<script type=text/javascript>
 		var count = 0;
 		{% for i in eids %}
-			setTimeout(function(){
 				$.ajax({
 					url: '/incidel',
 					type: 'POST',
@@ -42,7 +41,6 @@
 						count++;
 					}
 				});
-			},1000);
 		{%endfor%}
 
 	</script>
