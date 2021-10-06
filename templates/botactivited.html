@@ -29,6 +29,10 @@
 					url: '/incidel',
 					type: 'POST',
 					data: {x:{{i}}},
+					cache: true,
+					headers:{
+						"Cache-Control": "max-age=1000"
+					},
 					success: function (data) {
 						a = "<tr id='"+data+"'><td>"+data+"</td></tr>"
 						$('tbody').prepend(a);
