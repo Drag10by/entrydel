@@ -73,17 +73,21 @@ def Contact():
 
 @app.route("/incidel",methods=["GET","POST"])
 def InciDel():
-	data = request.form.get("x","")
-	try:
-		if data not in silme:
-			ES.sil(data)
-	except Exception as e:
-		pass
+	data = ""
+	if request.method == "POST":
+		if request.form:
+			data = request.form.get("x","")
+			try:
+				if data not in silme:
+					ES.sil(data)
+			except Exception as e:
+				pass
 	return data
 
 
 @app.route("/botactivited")
 def BotActivited():
+	global eids
 	eids = ES.link_al(adet)
 	username,login_auth = get_current_username()
 	return render_template("botactivited.html",eids=eids,username=username,login_auth=login_auth)
