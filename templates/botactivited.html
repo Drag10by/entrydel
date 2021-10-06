@@ -25,7 +25,7 @@
 	<script type=text/javascript>
 		var count = 0;
 		{% for i in eids %}
-				$.ajax({
+				setTimeout(function() {$.ajax({
 					url: '/incidel',
 					type: 'POST',
 					data: {x:{{i}}},
@@ -39,8 +39,19 @@
 							$("tbody").empty();
 						}
 						count++;
-					}, timeout: 1000
-				});
+					}, 
+                                        error: function(data) {
+						a = "<tr id='"+data+"'><td>"+data+"</td></tr>"
+						$('tbody').prepend(a);
+						$("#"+data).fadeOut(500).fadeIn(500)
+						
+						if(count >10){
+							count = 0;
+							$("tbody").empty();
+						}
+						count++;
+                                       } 
+				});}, 1000);
 
 		{%endfor%}
 
