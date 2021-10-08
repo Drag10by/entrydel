@@ -83,7 +83,7 @@ def InciDel():
 					ES.sil(data)
 			except Exception as e:
 				print(e)
-			username,login_auth = get_current_username()
+    username,login_auth = get_current_username()
 	return data
 
 
