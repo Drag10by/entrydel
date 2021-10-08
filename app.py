@@ -2,6 +2,7 @@ from flask import Flask, render_template, redirect, url_for, request, make_respo
 from itsdangerous import Signer, BadSignature
 from session_interface import MySessionInterface
 from inci import Entry_Sil
+import time
 
 #set FLASK_ENV=development
 
@@ -83,8 +84,8 @@ def InciDel():
 					ES.sil(data)
 			except Exception as e:
 				print(e)
-        username,login_auth = get_current_username()
-        return data
+	username,login_auth = get_current_username()
+	return data
 
 
 @app.route("/botactivited")
